@@ -9,8 +9,9 @@ public class AnimalsLauncher : MonoBehaviour
     [SerializeField] float y_spacing = 2f;
     [SerializeField] TMPro.TMP_Text countLabel;
     [SerializeField] List<GameObject> animalPrefabs;
-    [SerializeField] GameObject animalPrefab;
+    [SerializeField] Animal animalPrefab;
     [SerializeField] Transform animalsParent;
+    [SerializeField] List<AnimalSO> animalsToChooseFrom;
     [SerializeField] List<GameObject> currentAnimals;
     [SerializeField] bool mixMode = false;
 
@@ -36,25 +37,26 @@ public class AnimalsLauncher : MonoBehaviour
 
     void SpawnAnimals(int numberToSpawn)
     {
-        GameObject animalPrefab = GetAnimalPrefab();
         for (int i = 0; i < numberToSpawn; i++)
         {
-            if (mixMode)
-            {
-                animalPrefab = GetAnimalPrefab();
-            }
-            GameObject newAnimal = Instantiate(animalPrefab, animalsParent);
-            currentAnimals.Add(newAnimal);
+            //if (mixMode)
+            //{
+            //    animalPrefab = GetAnimalPrefab();
+            //}
+            AnimalSO animalData = GetRandomAnimalData();
+            Animal newAnimal = Instantiate(animalPrefab, animalsParent);
+            newAnimal.ConfigureAnimalWithData(animalData);
+            currentAnimals.Add(newAnimal.gameObject);
             float xCoord = (float)i * x_spacing;
             float yCoord = (float)(i % 3) * y_spacing;
             newAnimal.transform.localPosition = new Vector3(xCoord, yCoord, 0);
         }
     }
 
-    GameObject GetAnimalPrefab()
+    AnimalSO GetRandomAnimalData()
     {
-        int randomIndex = Random.Range(0, animalPrefabs.Count);
-        return animalPrefabs[randomIndex];
+        int randomIndex = Random.Range(0, animalsToChooseFrom.Count);
+        return animalsToChooseFrom[randomIndex];
     }
 
     public void SetMaximumAnimalsTo(float maxAnimals)
@@ -71,5 +73,10 @@ public class AnimalsLauncher : MonoBehaviour
     public void SetMixMode(bool isOn)
     {
         mixMode = isOn;
+    }
+
+    public void SetAnimalsToChooseFrom(List<AnimalSO> animals)
+    {
+        animalsToChooseFrom = animals;
     }
 }

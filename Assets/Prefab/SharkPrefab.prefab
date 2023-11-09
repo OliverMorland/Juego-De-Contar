@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5511789985018417318}
   - component: {fileID: 5511789985018417321}
+  - component: {fileID: 966728444853579231}
   m_Layer: 0
   m_Name: SharkPrefab
   m_TagString: Untagged
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &966728444853579231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5511789985018417320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe8fcf0aa86b9204ca23285ab204e574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 5511789985018417321}
