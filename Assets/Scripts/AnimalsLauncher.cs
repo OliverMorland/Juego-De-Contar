@@ -13,7 +13,6 @@ public class AnimalsLauncher : MonoBehaviour
     [SerializeField] Transform animalsParent;
     [SerializeField] List<AnimalSO> animalsToChooseFrom;
     [SerializeField] List<GameObject> currentAnimals;
-    [SerializeField] bool mixMode = false;
 
     public void SpawnRandomNumberOfAnimals()
     {
@@ -39,10 +38,6 @@ public class AnimalsLauncher : MonoBehaviour
     {
         for (int i = 0; i < numberToSpawn; i++)
         {
-            //if (mixMode)
-            //{
-            //    animalPrefab = GetAnimalPrefab();
-            //}
             AnimalSO animalData = GetRandomAnimalData();
             Animal newAnimal = Instantiate(animalPrefab, animalsParent);
             newAnimal.ConfigureAnimalWithData(animalData);
@@ -68,11 +63,6 @@ public class AnimalsLauncher : MonoBehaviour
     {
         countLabel.text = $"{currentAnimals.Count}";
         LeanTween.scale(countLabel.gameObject, new Vector3(1, 1, 1), 1.5f).setEaseOutElastic();
-    }
-
-    public void SetMixMode(bool isOn)
-    {
-        mixMode = isOn;
     }
 
     public void SetAnimalsToChooseFrom(List<AnimalSO> animals)

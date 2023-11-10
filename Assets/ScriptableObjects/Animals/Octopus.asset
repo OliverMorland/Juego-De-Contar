@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0325f7dcce4766c4390b63f591f30f42, type: 3}
   m_Name: Octopus
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 019cf7589a4d249518493a87177053d6, type: 3}
+  sprite: {fileID: 21300000, guid: 90d5ab4f934b8cc49b50a39994a2443d, type: 3}
   animalName: Octopus

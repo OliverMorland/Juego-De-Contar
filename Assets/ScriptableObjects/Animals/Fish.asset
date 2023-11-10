@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0325f7dcce4766c4390b63f591f30f42, type: 3}
   m_Name: Fish
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: ba5bfa9771711426a978859f3dc6d64d, type: 3}
+  sprite: {fileID: 21300000, guid: 8fa965f2fecc24343932ad3b4f99f275, type: 3}
   animalName: Fish
