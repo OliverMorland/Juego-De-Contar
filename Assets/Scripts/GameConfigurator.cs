@@ -16,6 +16,16 @@ public class GameConfigurator : MonoBehaviour
     {
         CreateButtons();
         RegisterOnAnimalSelectedUpdate();
+        SelectFirstAnimalButton();
+    }
+
+    void SelectFirstAnimalButton()
+    {
+        if (animalButtons.Count > 0)
+        {
+            animalButtons[0].SetSelected(true);
+            UpdateSelectedAnimals();
+        }
     }
 
     void CreateButtons()
